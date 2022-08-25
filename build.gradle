@@ -1,0 +1,56 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.3'
+    id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    annotationProcessor ("org.springframework.boot:spring-boot-configuration-processor")
+
+    implementation("org.infinispan:infinispan-core:13.0.8.Final")
+    implementation("org.infinispan:infinispan-commons:13.0.8.Final")
+    implementation("org.infinispan:infinispan-commons-jdk11:13.0.8.Final")
+    implementation("org.infinispan:infinispan-query:13.0.8.Final")
+    implementation("org.infinispan:infinispan-query-core:13.0.8.Final")
+    implementation("org.infinispan:infinispan-query-dsl:13.0.8.Final")
+    implementation("org.infinispan:infinispan-hibernate-cache-spi:13.0.8.Final")
+    implementation("org.infinispan:infinispan-scripting:13.0.8.Final")
+//  implementation("org.infinispan:infinispan-lucene-directory:13.0.6.Final")
+    implementation("org.infinispan:infinispan-objectfilter:13.0.8.Final")
+    implementation("org.infinispan:infinispan-clustered-lock:13.0.8.Final")
+    implementation("org.infinispan:infinispan-jboss-marshalling:13.0.8.Final")
+//  implementation("org.infinispan:infinispan-client-hotrod:13.0.8.Final")
+    implementation("org.infinispan:infinispan-hibernate-cache-spi:13.0.8.Final")
+    implementation("org.infinispan:infinispan-component-annotations:13.0.8.Final")
+    implementation("org.infinispan:infinispan-tasks:13.0.8.Final")
+    implementation("org.infinispan:infinispan-tasks-api:13.0.8.Final")
+    implementation("org.infinispan:infinispan-tasks-api:13.0.8.Final")
+    implementation("org.infinispan:infinispan-jboss-marshalling:13.0.8.Final")
+
+    implementation("org.apache.lucene:lucene-analyzers-nori:8.7.0")
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

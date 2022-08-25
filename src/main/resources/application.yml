@@ -1,0 +1,5 @@
+core:
+  infinispan:
+    cache-path: /Users/${user.name}/resource/ibro/cache2
+server:
+  port: 8085
